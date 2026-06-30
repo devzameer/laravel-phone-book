@@ -14,40 +14,59 @@
 
         <h2 class="text-center mb-4">Login Page</h2>
 
-        <form>
+        <form action="{{ route('login.user') }}" method="POST">
 
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">
-                    Email address
-                </label>
+    @csrf
 
-                <input type="email" class="form-control" id="exampleInputEmail1">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">
+            Email address
+        </label>
 
-                <div class="form-text">
-                    We'll never share your email with anyone else.
-                </div>
-            </div>
+        <input
+            type="email"
+            name="email"
+            class="form-control"
+            id="exampleInputEmail1"
+        >
 
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">
-                    Password
-                </label>
+        <div class="form-text">
+            We'll never share your email with anyone else.
+        </div>
+    </div>
 
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">
+            Password
+        </label>
 
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <input
+            type="password"
+            name="password"
+            class="form-control"
+            id="exampleInputPassword1"
+        >
+    </div>
 
-                <p>If you don't have account please signup </p>
-                <div class=""> <a href="/signup">signup</a> </div>
-            </div>
+    <div class="mb-3 form-check">
 
-            <button type="submit" class="btn btn-primary w-100">
-                Submit
-            </button>
+        <input
+            type="checkbox"
+            class="form-check-input"
+            id="exampleCheck1"
+        >
 
-        </form>
+        <p>If you don't have account please signup</p>
+
+        <a href="/signup">Signup</a>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">
+        Login
+    </button>
+
+</form>
 
     </div>
 
